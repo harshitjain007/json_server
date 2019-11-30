@@ -1,9 +1,62 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "hello"
-    }
+  "id": "Form id",
+  "title": "Form Title",
+  "description": "Form description",
+  "contents": [
+      {
+      "type": "person",
+      "relation": "self",
+      "fields":{
+          "name": {
+            "has_subfields": true,
+            "subfields": ["first_name", "last_name"],
+            "delimiter": " ",
+            "store_in_app": true,
+            "first_name" : {
+              "data_type": "string",
+              "required": true
+            },
+            "last_name" : {
+              "data_type": "string",
+              "required": true
+            }
+          },
+          "date_of_birth": {
+           "store_in_app": true,
+           "has_subfields": false,
+            "data_type": "datetime",
+            "required": true
+          },
+          "contact_number" : {
+            "has_subfields": true,
+            "subfields": ["telecom_country_code", "number"],
+            "required": true,
+            "store_in_app": "true",
+            "telecom_country_code" : {
+              "data_type": "telecom_country_code",
+              "values":"a"
+            },
+            "number": {
+              "data_type": "string"
+            }
+          },
+          "person_to_meet": {
+            "store_in_app": false,
+            "required": true,
+            "data_type": "string",
+            "max_length": 30
+          },
+          "purpose_of_meeting": {
+            "store_in_app": false,
+            "required": true,
+            "data_type": "string",
+            "max_length": 30
+          }
+      }}
+    ]
+}
   ],
   "profile": {
     "name": "typicode"
