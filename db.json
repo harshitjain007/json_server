@@ -1,60 +1,92 @@
 {
   "posts": [
-    {
-  "id": "Formid",
+    
+{
+  "id": "Form id",
   "title": "Form Title",
   "description": "Form description",
   "contents": [
       {
       "type": "person",
       "relation": "self",
-      "fields":{
-          "name": {
-            "has_subfields": true,
-            "subfields": ["first_name", "last_name"],
+      "fields":[
+          {
+            "id": "name",
             "delimiter": " ",
             "store_in_app": true,
-            "first_name" : {
-              "data_type": "string",
-              "required": true
-            },
-            "last_name" : {
-              "data_type": "string",
-              "required": true
-            }
+            "orderedPrimitiveList": [
+              {
+                "id": "first_name",
+                "data_type": "string",
+                "display_name": "First Name",
+                "max_length":32
+              },
+              {
+                "id": "last_name",
+                "data_type": "string",
+                "display_name": "Last Name",
+                "max_length":32
+              }
+            ]
           },
-          "date_of_birth": {
-           "store_in_app": true,
-           "has_subfields": false,
-            "data_type": "datetime",
-            "required": true
+          {
+            "id":"date_of_birth",
+            "delimiter": null,
+            "store_in_app": true,
+            "orderedPrimitiveList": [
+              {
+                "id": "date_of_birth",
+                "data_type": "datetime",
+                "display_name": "Date of birth"    
+              }
+            ]
           },
-          "contact_number" : {
-            "has_subfields": true,
-            "subfields": ["telecom_country_code", "number"],
-            "required": true,
-            "store_in_app": "true",
-            "telecom_country_code" : {
-              "data_type": "telecom_country_code",
-              "values":"a"
-            },
-            "number": {
-              "data_type": "string"
-            }
+          {
+            "id":"contact_number",
+            "delimiter": null,
+            "store_in_app": true,
+            "orderedPrimitiveList": [
+                {
+                "id": "telecom_country_code",
+                "data_type": "telecom_country_code",
+                "display_name": "Country Code"    
+                },
+                {
+                "id":"number",
+                "data_type": "string",
+                "display_name": "Number",
+                "max_length":32
+                }
+              ]
           },
-          "person_to_meet": {
+          {
+           "id":"person_to_meet",
+            "delimiter": null,
             "store_in_app": false,
-            "required": true,
-            "data_type": "string",
-            "max_length": 30
+            "orderedPrimitiveList": [
+              {
+                "id": "person_to_meet",
+                "data_type": "string",
+                "max_length": 32,
+                "display_name": "Person To Meet"    
+              }
+            ]
           },
-          "purpose_of_meeting": {
+          {
+           "id":"purpose_of_meeting",
+            "delimiter": null,
             "store_in_app": false,
-            "required": true,
-            "data_type": "string",
-            "max_length": 30
+            "orderedPrimitiveList": [
+              {
+                "id": "purpose_of_meeting",
+                "data_type": "string",
+                "max_length": 32,
+                "display_name": "Purponse of meeting"    
+              }
+            ]
           }
-      }}
+      ]
+      }
     ]
 }
   ],
